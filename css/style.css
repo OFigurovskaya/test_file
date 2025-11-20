@@ -4,18 +4,31 @@
     --text_color: #fff;
 }
 
+@font-face {
+    font-family: 'Golos Text';
+    src: url('../fonts/GolosText-Regular.woff2') format('woff2'),
+         url('../fonts/GolosText-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
 
 body {
     width: 100%;
-    font-family: 'Regular', Arial, sans-serif; 
+    font-family: 'Golos Text', Arial, sans-serif; 
     font-weight: 400; 
     font-size: calc(var(--sizeindex) * .75);
     background: var(--bc_color);
+    color: var(--text_color);
 }
 
 .container {
-    max-width: 1200px;   /* максимальная ширина */
+    max-width: 1920px;   /* максимальная ширина */
     margin: 0 auto;      /* центрирование по горизонтали */
     padding: 0 15px;     /* внутренние отступы слева и справа */
     box-sizing: border-box; /* чтобы padding не увеличивал ширину */
   }
+
+.header__text {
+    opacity: 0.5;
+}
