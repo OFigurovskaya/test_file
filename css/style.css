@@ -1,0 +1,21 @@
+:root {
+    --sizeindex: calc(1vw + 1vh);
+    --bc_color: #000000;
+    --text_color: #fff;
+}
+
+
+body {
+    width: 100%;
+    font-family: 'Regular', Arial, sans-serif; 
+    font-weight: 400; 
+    font-size: calc(var(--sizeindex) * .75);
+    background: var(--bc_color);
+}
+
+.container {
+    max-width: 1200px;   /* максимальная ширина */
+    margin: 0 auto;      /* центрирование по горизонтали */
+    padding: 0 15px;     /* внутренние отступы слева и справа */
+    box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+  }
