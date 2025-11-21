@@ -7,28 +7,123 @@
 @font-face {
     font-family: 'Golos Text';
     src: url('../fonts/GolosText-Regular.woff2') format('woff2'),
-         url('../fonts/GolosText-Regular.woff') format('woff');
+        url('../fonts/GolosText-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-  }
-
+}
 
 body {
     width: 100%;
-    font-family: 'Golos Text', Arial, sans-serif; 
-    font-weight: 400; 
-    font-size: calc(var(--sizeindex) * .75);
+    font-family: 'Golos Text', Arial, sans-serif;
+    font-weight: 400;
+    font-size: var(--sizeindex);
     background: var(--bc_color);
     color: var(--text_color);
+    margin: 0;
 }
 
 .container {
-    max-width: 1920px;   /* максимальная ширина */
-    margin: 0 auto;      /* центрирование по горизонтали */
-    padding: 0 15px;     /* внутренние отступы слева и справа */
-    box-sizing: border-box; /* чтобы padding не увеличивал ширину */
-  }
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 10.5rem 0;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+}
+
+.header {
+    margin-bottom: 6.5vh;
+}
 
 .header__text {
+    text-align: center;
     opacity: 0.5;
+    font-size: calc(var(--sizeindex) * 0.8);
+    margin: 0;
 }
+
+.content {
+    max-width: 95%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-wrapper {
+    /* padding: 2rem 5rem;
+    text-transform: uppercase; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: normal;
+    text-transform: uppercase;
+    font-size: calc(var(--sizeindex) * 3.9);
+    row-gap: 0.5vh;
+    column-gap: 1.5vw
+}
+
+.content__text,
+.content__img {
+    display: inline-flex;
+    margin-right: 6px;
+}
+
+.content__text {
+    font-size: calc(var(--sizeindex) * 3.9);
+    line-height: 1;
+    letter-spacing: -2.5px;
+
+}
+
+.content__img {
+
+}
+
+.left {
+    margin-left: 12vw;
+}
+
+.rigth {
+    margin-right: 12vw;
+} 
+
+
+/* button */
+.hex-button {
+    position: relative;
+    padding: 12px 40px; /* вертикальные и горизонтальные отступы */
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  
+    /* Форма шестиугольника */
+    clip-path: polygon(25% 0%, 85% 0%, 91% 50%, 85% 100%, 25% 100%, 7% 55%);
+  
+    /* Чтобы текст не выходил за пределы */
+    white-space: nowrap;
+  
+    /* Плавный переход цвета при наведении */
+    transition: background-color 0.3s ease;
+  }
+  
+  .hex-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Фоновая линия (граница) вокруг шестиугольника */
+  .hex-button::before {
+    content: "";
+    position: absolute;
+    top: -3px; left: -3px; right: -3px; bottom: -3px;
+    background: transparent;
+    border: 3px solid #0056b3;
+    clip-path: polygon(
+      25% 0%, 75% 0%, 
+      100% 50%, 75% 100%, 
+      25% 100%, 0% 50%
+    );
+    pointer-events: none; /* чтобы не мешать клику */
+    z-index: -1;
+  }
