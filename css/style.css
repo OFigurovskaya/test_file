@@ -23,16 +23,17 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     max-width: 1920px;
+    height: auto;
     margin: 0 auto;
-    padding: 10.5rem 0;
+    padding: 10.5rem 0 0 0;
     box-sizing: border-box;
     border: 1px solid #fff;
+    gap: 7vh
 }
 
-.header {
-    margin-bottom: 6.5vh;
-}
 
 .header__text {
     text-align: center;
@@ -45,11 +46,10 @@ body {
     max-width: 95%;
     margin: 0 auto;
     width: 100%;
+    margin-bottom: 2vh;
 }
 
 .content-wrapper {
-    /* padding: 2rem 5rem;
-    text-transform: uppercase; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,56 +74,49 @@ body {
 
 }
 
-.content__img {
-
-}
-
 .left {
     margin-left: 12vw;
 }
 
 .rigth {
     margin-right: 12vw;
-} 
+}
 
 
 /* button */
-.hex-button {
+.footer {
+    /* text-align: center; */
+
     position: relative;
-    padding: 12px 40px; /* вертикальные и горизонтальные отступы */
-    font-size: 16px;
-    color: white;
-    background-color: #007BFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* расстояние между кнопкой и линией */
+}
+
+.footer__button {
+    position: relative;
+    padding: 27px 80px;
+    font-size: calc(var(--sizeindex) * 0.8);
+    color: var(--bc_color);
+    background-color: var(--text_color);
     border: none;
     cursor: pointer;
     outline: none;
-  
-    /* Форма шестиугольника */
-    clip-path: polygon(25% 0%, 85% 0%, 91% 50%, 85% 100%, 25% 100%, 7% 55%);
-  
-    /* Чтобы текст не выходил за пределы */
+    clip-path: polygon(19% -25%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%);
     white-space: nowrap;
-  
-    /* Плавный переход цвета при наведении */
     transition: background-color 0.3s ease;
-  }
-  
-  .hex-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Фоновая линия (граница) вокруг шестиугольника */
-  .hex-button::before {
-    content: "";
+
+    z-index: 2; 
+}
+
+/* line */
+
+.footer__line {
     position: absolute;
-    top: -3px; left: -3px; right: -3px; bottom: -3px;
-    background: transparent;
-    border: 3px solid #0056b3;
-    clip-path: polygon(
-      25% 0%, 75% 0%, 
-      100% 50%, 75% 100%, 
-      25% 100%, 0% 50%
-    );
-    pointer-events: none; /* чтобы не мешать клику */
-    z-index: -1;
-  }
+    width: 63%;
+    height: 2px; 
+    background-color: var(--text_color); 
+    z-index: 1;
+}
