@@ -30,7 +30,6 @@ body {
     margin: 0 auto;
     padding: 10.5rem 0 0 0;
     box-sizing: border-box;
-    border: 1px solid #fff;
     gap: 7vh
 }
 
@@ -71,8 +70,13 @@ body {
     font-size: calc(var(--sizeindex) * 3.9);
     line-height: 1;
     letter-spacing: -2.5px;
-
 }
+
+.content__img {
+    height: 0.7em; 
+    object-fit: contain; /* чтобы изображение не искажалось */
+    vertical-align: middle; /* выравнивание по базовой линии текста */
+  }
 
 .left {
     margin-left: 12vw;
@@ -97,7 +101,7 @@ body {
 
 .footer__button {
     position: relative;
-    padding: 27px 80px;
+    padding: 2.6vh 4.2vw;
     font-size: calc(var(--sizeindex) * 0.8);
     color: var(--bc_color);
     background-color: var(--text_color);
@@ -108,7 +112,7 @@ body {
     white-space: nowrap;
     transition: background-color 0.3s ease;
 
-    z-index: 2; 
+    z-index: 2;
 }
 
 /* line */
@@ -116,7 +120,41 @@ body {
 .footer__line {
     position: absolute;
     width: 63%;
-    height: 2px; 
-    background-color: var(--text_color); 
+    height: 2px;
+    background-color: var(--text_color);
     z-index: 1;
+
+}
+
+@media (min-width: 2150px) {
+    .rigth,
+    .left {
+        margin: 0;
+    }
+    .footer {
+        margin-bottom: 2vh;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1350px) {
+
+    .rigth,
+    .left {
+        margin: 0;
+    }
+
+    .container {
+        padding: 7.5rem 0 0 0;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+    .rigth,
+    .left {
+        margin: 0;
+    }
+    
+    .content__text {
+        font-size: calc(var(--sizeindex) * 2.9);
+    }
 }
