@@ -33,7 +33,6 @@ body {
     gap: 7vh
 }
 
-
 .header__text {
     text-align: center;
     opacity: 0.5;
@@ -74,29 +73,26 @@ body {
 
 .content__img {
     height: 0.7em; 
-    object-fit: contain; /* чтобы изображение не искажалось */
-    vertical-align: middle; /* выравнивание по базовой линии текста */
+    object-fit: contain; 
+    vertical-align: middle; 
   }
 
 .left {
     margin-left: 12vw;
 }
 
-.rigth {
+.right {
     margin-right: 12vw;
 }
 
 
 /* button */
 .footer {
-    /* text-align: center; */
-
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* расстояние между кнопкой и линией */
 }
 
 .footer__button {
@@ -110,9 +106,13 @@ body {
     outline: none;
     clip-path: polygon(19% -25%, 85% 0%, 91% 50%, 85% 100%, 15% 100%, 9% 50%);
     white-space: nowrap;
-    transition: background-color 0.3s ease;
-
+    transition: background-color 0.3s ease, color 0.3s ease;
     z-index: 2;
+}
+
+.footer__button:hover {
+    background-color: blue;
+    color: var(--text_color)
 }
 
 /* line */
@@ -123,11 +123,10 @@ body {
     height: 2px;
     background-color: var(--text_color);
     z-index: 1;
-
 }
 
 @media (min-width: 2150px) {
-    .rigth,
+    .right,
     .left {
         margin: 0;
     }
@@ -137,23 +136,20 @@ body {
 }
 
 @media (min-width: 576px) and (max-width: 1350px) {
-
-    .rigth,
+    .right,
     .left {
         margin: 0;
     }
-
     .container {
         padding: 7.5rem 0 0 0;
     }
 }
 
 @media (min-width: 320px) and (max-width: 575px) {
-    .rigth,
+    .right,
     .left {
         margin: 0;
     }
-    
     .content__text {
         font-size: calc(var(--sizeindex) * 2.9);
     }
